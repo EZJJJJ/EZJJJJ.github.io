@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="java面试题从互联网搜索及亲身经历">
+  <meta name="description" content="Java面试题从互联网搜索及亲身经历">
 <meta name="keywords" content="面试题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java面试题">
+<meta property="og:title" content="Java面试题第一集">
 <meta property="og:url" content="http://yoursite.com/2019/06/11/javaInterview/index.html">
 <meta property="og:site_name" content="JWZ&#39;s blog">
-<meta property="og:description" content="java面试题从互联网搜索及亲身经历">
+<meta property="og:description" content="Java面试题从互联网搜索及亲身经历">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-11T00:27:00.223Z">
+<meta property="og:updated_time" content="2019-06-11T18:15:28.165Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java面试题">
-<meta name="twitter:description" content="java面试题从互联网搜索及亲身经历">
+<meta name="twitter:title" content="Java面试题第一集">
+<meta name="twitter:description" content="Java面试题从互联网搜索及亲身经历">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>java面试题 | JWZ's blog</title>
+  <title>Java面试题第一集 | JWZ's blog</title>
   
 
 
@@ -341,7 +341,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">java面试题
+          <h1 class="post-title" itemprop="name headline">Java面试题第一集
 
               
             
@@ -367,12 +367,24 @@
                 
               
 
-              <time title="创建时间：2019-06-11 08:08:13 / 修改时间：08:27:00" itemprop="dateCreated datePublished" datetime="2019-06-11T08:08:13+08:00">2019-06-11</time>
+              <time title="创建时间：2019-06-11 08:08:13" itemprop="dateCreated datePublished" datetime="2019-06-11T08:08:13+08:00">2019-06-11</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-06-12 02:15:28" itemprop="dateModified" datetime="2019-06-12T02:15:28+08:00">2019-06-12</time>
               
             
           </span>
@@ -424,7 +436,7 @@
       
 
       
-        <h1 id="java面试题"><a href="#java面试题" class="headerlink" title="java面试题"></a>java面试题</h1><p>从互联网搜索及亲身经历</p>
+        <h1 id="Java面试题"><a href="#Java面试题" class="headerlink" title="Java面试题"></a>Java面试题</h1><p>从互联网搜索及亲身经历</p>
 <a id="more"></a>
 
 <h3 id="java语言中访问权限修饰符有哪些？"><a href="#java语言中访问权限修饰符有哪些？" class="headerlink" title="java语言中访问权限修饰符有哪些？"></a>java语言中访问权限修饰符有哪些？</h3><ol>
@@ -482,6 +494,32 @@
 <td>×</td>
 </tr>
 </tbody></table>
+<h3 id="Java数组在内存中如何分配"><a href="#Java数组在内存中如何分配" class="headerlink" title="Java数组在内存中如何分配"></a>Java数组在内存中如何分配</h3><h4 id="Java数组是静态的"><a href="#Java数组是静态的" class="headerlink" title="Java数组是静态的"></a>Java数组是静态的</h4><p>​    Java 语言是典型的静态语言，因此 Java 数组是静态的，即当数组被初始化之后，该数组 所占的内存空间、数组长度都是不可变的。Java 程序中的数组必须经过初始化才可使用。所谓初始化，即创建实际的数组对象，也就是在内存中为数组对象分配内存空间，并为每个数组 元素指定初始值。</p>
+<p>数组的初始化有以下两种方式。</p>
+<ul>
+<li><strong>静态初始化：</strong>初始化时由程序员显式指定每个数组元素的初始值，由系统决定数组长度。</li>
+<li><strong>动态初始化：</strong>初始化时程序员只指定数组长度，由系统为数组元素分配初始值。</li>
+</ul>
+<p>​    不管采用哪种方式初始化Java 数组，一旦初始化完成，该数组的长度就不可改变，Java 语言允许通过数组的length 属性来访问数组的长度。</p>
+<p>​    Java 数组是静态的，一旦数组初始化完成，数组元素的内存空间分配即结束，程序只能改变数组元素的值，而无法改变数组的长度。</p>
+<p>​    需要指出的是，<strong>Java 的数组变量是一种引用类型的变量，数组变量并不是数组本身，它 只是指向堆内存中的数组对象</strong>。因此，可以改变一个数组变量所引用的数组，这样可以造成数 组长度可变的假象。</p>
+<h3 id="String-StringBuffer-StringBuider的区别"><a href="#String-StringBuffer-StringBuider的区别" class="headerlink" title="String,StringBuffer,StringBuider的区别"></a>String,StringBuffer,StringBuider的区别</h3><p>​    这个面试题我在互联网上看到过很多次，应该是很常问的吧。</p>
+<p><strong>String</strong> 字符串常量  <strong>StringBuffer</strong> 字符串变量（线程安全） <strong>StringBuilder</strong> 字符串变量（非线程安全）</p>
+<p>​        简要的说， String 类型和 StringBuffer 类型的主要性能区别其实在于 String 是不可变的对象, 因此在每次对 String 类型进行改变的时候其实都等同于生成了一个新的 String 对象，然后将指针指向新的 String 对象，所以经常改变内容的字符串最好不要用 String ，因为每次生成对象都会对系统性能产生影响，特别当内存中无引用对象多了以后， JVM 的 GC 就会开始工作，那速度是一定会相当慢的。</p>
+<p>而如果是使用 StringBuffer 类则结果就不一样了，每次结果都会对 StringBuffer 对象本身进行操作，而不是生成新的对象，再改变对象引用。所以在一般情况下我们推荐使用 StringBuffer ，特别是字符串对象经常改变的情况下。而在某些特别情况下， String 对象的字符串拼接其实是被 JVM 解释成了 StringBuffer 对象的拼接，所以这些时候 String 对象的速度并不会比 StringBuffer 对象慢，而特别是以下的字符串对象生成中， String 效率是远要比 StringBuffer 快的：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String S1 = “This is only a” + “ simple” + “ test”;</span><br><span class="line">StringBuffer Sb = <span class="keyword">new</span> StringBuilder(“This is only a”).append(“ simple”).append(“ test”);</span><br></pre></td></tr></table></figure>
+
+<p>你会很惊讶的发现，生成 String S1 对象的速度简直太快了，而这个时候 StringBuffer 居然速度上根本一点都不占优势。其实这是 JVM 的一个把戏，在 JVM 中</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String S1 = “This is only a” + “ simple” + “test”; </span><br><span class="line">与</span><br><span class="line">String S1 = “This is only a simple test”;</span><br><span class="line">相等</span><br></pre></td></tr></table></figure>
+
+<p>​        所以当然不需要太多的时间了。但大家这里要注意的是，如果你的字符串是来自另外的 String 对象的话，速度就没那么快了。譬如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String S2 = “This is only a”;</span><br><span class="line">String S3 = “ simple”;</span><br><span class="line">String S4 = “ test”;</span><br><span class="line">String S1 = S2 +S3 + S4;</span><br></pre></td></tr></table></figure>
+
+<p>这时候 JVM 会规规矩矩的按照原来的方式去做，在大部分情况下 StringBuffer &gt; String。</p>
+<h4 id="StringBuffer"><a href="#StringBuffer" class="headerlink" title="StringBuffer"></a>StringBuffer</h4><p>​        Java.lang.StringBuffer线程安全的可变字符序列。一个类似于 String 的字符串缓冲区，但不能修改。虽然在任意时间点上它都包含某种特定的字符序列，但通过某些方法调用可以改变该序列的长度和内容。可将字符串缓冲区安全地用于多个线程。可以在必要时对这些方法进行同步，因此任意特定实例上的所有操作就好像是以串行顺序发生的，该顺序与所涉及的每个线程进行的方法调用顺序一致。<br>​        StringBuffer 上的主要操作是 append 和 insert 方法，可重载这些方法，以接受任意类型的数据。每个方法都能有效地将给定的数据转换成字符串，然后将该字符串的字符追加或插入到字符串缓冲区中。append 方法始终将这些字符添加到缓冲区的末端；而 insert 方法则在指定的点添加字符。<br>​        例如，如果 z 引用一个当前内容是“start”的字符串缓冲区对象，则此方法调用 z.append(“le”) 会使字符串缓冲区包含“startle”，而 z.insert(4, “le”) 将更改字符串缓冲区，使之包含“starlet”。<br>在大部分情况下 StringBuilder &gt; StringBuffer</p>
+<h4 id="StringBuilder"><a href="#StringBuilder" class="headerlink" title="StringBuilder"></a>StringBuilder</h4><p>​        java.lang.StringBuilder一个可变的字符序列是5.0新增的。此类提供一个与 StringBuffer 兼容的 API，但不保证同步。该类被设计用作 StringBuffer 的一个简易替换，用在字符串缓冲区被单个线程使用的时候（这种情况很普遍）。如果可能，建议优先采用该类，因为在大多数实现中，它比 StringBuffer 要快。两者的方法基本相同。</p>
+<p><strong>总结一下就是 String不可变，StringBuffer可变且线程安全但相对于StringBuilder效率较低，StringBuilder可变但线程不安全但相对于StringBuilder效率较高</strong></p>
+<p><strong>未完待续。。。</strong></p>
 
       
     </div>
@@ -741,7 +779,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java面试题"><span class="nav-number">1.</span> <span class="nav-text">java面试题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#java语言中访问权限修饰符有哪些？"><span class="nav-number">1.0.1.</span> <span class="nav-text">java语言中访问权限修饰符有哪些？</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java面试题"><span class="nav-number">1.</span> <span class="nav-text">Java面试题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#java语言中访问权限修饰符有哪些？"><span class="nav-number">1.0.1.</span> <span class="nav-text">java语言中访问权限修饰符有哪些？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java数组在内存中如何分配"><span class="nav-number">1.0.2.</span> <span class="nav-text">Java数组在内存中如何分配</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Java数组是静态的"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">Java数组是静态的</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String-StringBuffer-StringBuider的区别"><span class="nav-number">1.0.3.</span> <span class="nav-text">String,StringBuffer,StringBuider的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#StringBuffer"><span class="nav-number">1.0.3.1.</span> <span class="nav-text">StringBuffer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#StringBuilder"><span class="nav-number">1.0.3.2.</span> <span class="nav-text">StringBuilder</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
