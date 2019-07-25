@@ -96,13 +96,13 @@
 
 
 
-  <meta name="description" content="Java 导出Excel简介基于Excel4j实现 Excel主页 ：https://www.oschina.net/p/excel4j 开始Excel4J 是基于 poi 的 excel 操作组件，大大减少代码量，提高开发效率。 基于注解12345678910@ExcelField(title = &quot;学号&quot;, order = 1)private Long id;@ExcelField(title">
+  <meta name="description" content="Java 导出Excel简介基于Excel4j实现 Excel主页 ：https://www.oschina.net/p/excel4j 开始Excel4J 是基于 poi 的 excel 操作组件，大大减少代码量，提高开发效率。">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java Export Excel">
 <meta property="og:url" content="http://yoursite.com/2019/07/25/Java-Export-Excel/index.html">
 <meta property="og:site_name" content="JWZ&#39;s blog">
-<meta property="og:description" content="Java 导出Excel简介基于Excel4j实现 Excel主页 ：https://www.oschina.net/p/excel4j 开始Excel4J 是基于 poi 的 excel 操作组件，大大减少代码量，提高开发效率。 基于注解12345678910@ExcelField(title = &quot;学号&quot;, order = 1)private Long id;@ExcelField(title">
+<meta property="og:description" content="Java 导出Excel简介基于Excel4j实现 Excel主页 ：https://www.oschina.net/p/excel4j 开始Excel4J 是基于 poi 的 excel 操作组件，大大减少代码量，提高开发效率。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://static.oschina.net/uploads/img/201706/16190607_gDe7.png">
 <meta property="og:image" content="https://static.oschina.net/uploads/img/201706/16190607_RgU5.png">
@@ -111,10 +111,10 @@
 <meta property="og:image" content="https://static.oschina.net/uploads/img/201706/16190608_H2HF.png">
 <meta property="og:image" content="https://static.oschina.net/uploads/img/201706/16190609_D8V1.png">
 <meta property="og:image" content="https://static.oschina.net/uploads/img/201706/16190609_ovvh.png">
-<meta property="og:updated_time" content="2019-07-25T09:12:39.475Z">
+<meta property="og:updated_time" content="2019-07-25T09:15:11.104Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java Export Excel">
-<meta name="twitter:description" content="Java 导出Excel简介基于Excel4j实现 Excel主页 ：https://www.oschina.net/p/excel4j 开始Excel4J 是基于 poi 的 excel 操作组件，大大减少代码量，提高开发效率。 基于注解12345678910@ExcelField(title = &quot;学号&quot;, order = 1)private Long id;@ExcelField(title">
+<meta name="twitter:description" content="Java 导出Excel简介基于Excel4j实现 Excel主页 ：https://www.oschina.net/p/excel4j 开始Excel4J 是基于 poi 的 excel 操作组件，大大减少代码量，提高开发效率。">
 <meta name="twitter:image" content="https://static.oschina.net/uploads/img/201706/16190607_gDe7.png">
 
 
@@ -375,7 +375,7 @@
                 
               
 
-              <time title="创建时间：2019-07-25 16:52:33 / 修改时间：17:12:39" itemprop="dateCreated datePublished" datetime="2019-07-25T16:52:33+08:00">2019-07-25</time>
+              <time title="创建时间：2019-07-25 16:52:33 / 修改时间：17:15:11" itemprop="dateCreated datePublished" datetime="2019-07-25T16:52:33+08:00">2019-07-25</time>
             
 
             
@@ -435,6 +435,8 @@
         <h1 id="Java-导出Excel"><a href="#Java-导出Excel" class="headerlink" title="Java 导出Excel"></a>Java 导出Excel</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>基于Excel4j实现</p>
 <p>Excel主页 ：<a href="https://www.oschina.net/p/excel4j" target="_blank" rel="noopener">https://www.oschina.net/p/excel4j</a></p>
 <h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>Excel4J 是基于 poi 的 excel 操作组件，大大减少代码量，提高开发效率。</p>
+<a id="more"></a>
+
 <h2 id="基于注解"><a href="#基于注解" class="headerlink" title="基于注解"></a><strong>基于注解</strong></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ExcelField</span>(title = <span class="string">"学号"</span>, order = <span class="number">1</span>)</span><br><span class="line"><span class="keyword">private</span> Long id;</span><br><span class="line"><span class="meta">@ExcelField</span>(title = <span class="string">"姓名"</span>, order = <span class="number">2</span>)</span><br><span class="line"><span class="keyword">private</span> String name;</span><br><span class="line"><span class="meta">@ExcelField</span>(title = <span class="string">"入学日期"</span>, order = <span class="number">3</span>)</span><br><span class="line"><span class="keyword">private</span> Date date;</span><br><span class="line"><span class="meta">@ExcelField</span>(title = <span class="string">"班级"</span>, order = <span class="number">4</span>)</span><br><span class="line"><span class="keyword">private</span> Integer classes;</span><br><span class="line"><span class="meta">@ExcelField</span>(title = <span class="string">"是否开除"</span>, order = <span class="number">5</span>)</span><br><span class="line"><span class="keyword">private</span> String expel;</span><br></pre></td></tr></table></figure>
 
 <h2 id="读取Excel快速实现"><a href="#读取Excel快速实现" class="headerlink" title="读取Excel快速实现"></a>读取Excel快速实现</h2><h3 id="待读取Excel-截图"><a href="#待读取Excel-截图" class="headerlink" title="待读取Excel(截图)"></a>待读取Excel(截图)</h3><p><img src="https://static.oschina.net/uploads/img/201706/16190607_gDe7.png" alt="待读取Excel截图"></p>
