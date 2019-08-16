@@ -104,10 +104,12 @@
 <meta property="og:site_name" content="JWZ&#39;s blog">
 <meta property="og:description" content="Core Technologies核心技术 Version 5.1.9.RELEASE">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-16T03:25:01.504Z">
+<meta property="og:image" content="https://docs.spring.io/spring/docs/current/spring-framework-reference/images/container-magic.png">
+<meta property="og:updated_time" content="2019-08-16T06:08:19.594Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CoreTechnologies">
 <meta name="twitter:description" content="Core Technologies核心技术 Version 5.1.9.RELEASE">
+<meta name="twitter:image" content="https://docs.spring.io/spring/docs/current/spring-framework-reference/images/container-magic.png">
 
 
 
@@ -384,7 +386,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-16 11:25:01" itemprop="dateModified" datetime="2019-08-16T11:25:01+08:00">2019-08-16</time>
+                <time title="修改时间：2019-08-16 14:08:19" itemprop="dateModified" datetime="2019-08-16T14:08:19+08:00">2019-08-16</time>
               
             
           </span>
@@ -470,12 +472,25 @@
 <p>In short, the <code>BeanFactory</code> provides the configuration framework and basic functionality, and the <code>ApplicationContext</code> adds more enterprise-specific functionality. The <code>ApplicationContext</code> is a complete superset of the <code>BeanFactory</code> and is used exclusively in this chapter in descriptions of Spring’s IoC container. For more information on using the <code>BeanFactory</code> instead of the <code>ApplicationContext,</code> see <a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-beanfactory" target="_blank" rel="noopener">The <code>BeanFactory</code></a>.</p>
 <p>简而言之， <code>BeanFactory</code> 提供配置框架和基本功能 ，<code>ApplicationContext</code> 加入了许多特定于企业的功能。<br><code>ApplicationContext</code>是<code>BeanFactory</code>的完整超集，在本章中仅用于描述Spring的IoC容器。有关使用<code>BeanFactory</code>而不是<code>ApplicationContext</code>的更多信息，请参阅 <a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-beanfactory" target="_blank" rel="noopener"> TheBeanFactory</a>.</p>
 <p>In Spring, the objects that form the backbone of your application and that are managed by the Spring IoC container are called beans. A bean is an object that is instantiated, assembled, and otherwise managed by a Spring IoC container. Otherwise, a bean is simply one of many objects in your application. Beans, and the dependencies among them, are reflected in the configuration metadata used by a container.</p>
-<p>在Spring中，构成应用程序主干并由Spring IoC容器管理的对象称为bean。bean是一个由Spring IoC容器实例化，组装和管理的对象。除此之外，bean只是应用程序中众多对象中的一个。Bean及其之间的依赖关系反映在容器使用的配置数据中。</p>
+<p>在Spring中，构成应用程序主干并由Spring IoC容器管理的对象称为bean。bean是一个由Spring IoC容器实例化，组装和管理的对象。除此之外，bean只是应用程序中众多对象中的一个。Bean及其之间的依赖关系反映在容器使用的配置元数据中。</p>
 <h3 id="1-2-Container-Overview"><a href="#1-2-Container-Overview" class="headerlink" title="1.2. Container Overview"></a>1.2. Container Overview</h3><p>容器概览</p>
 <p>The <code>org.springframework.context.ApplicationContext</code> interface represents the Spring IoC container and is responsible for instantiating, configuring, and assembling the beans. The container gets its instructions on what objects to instantiate, configure, and assemble by reading configuration metadata. The configuration metadata is represented in XML, Java annotations, or Java code. It lets you express the objects that compose your application and the rich interdependencies between those objects.</p>
+<p>The <code>org.springframework.context.ApplicationContext</code> 接口表示Spring IoC容器，负责实例化，配置和组装bean。容器通过读取配置元数据获取有关要实例化，配置和组装的对象的指令。配置数据以XML，Java注释或Java代码表示。</p>
 <p>Several implementations of the <code>ApplicationContext</code> interface are supplied with Spring. In stand-alone applications, it is common to create an instance of <a href="https://docs.spring.io/spring-framework/docs/5.1.9.RELEASE/javadoc-api/org/springframework/context/support/ClassPathXmlApplicationContext.html" target="_blank" rel="noopener"><code>ClassPathXmlApplicationContext</code></a> or <a href="https://docs.spring.io/spring-framework/docs/5.1.9.RELEASE/javadoc-api/org/springframework/context/support/FileSystemXmlApplicationContext.html" target="_blank" rel="noopener"><code>FileSystemXmlApplicationContext</code></a>. While XML has been the traditional format for defining configuration metadata, you can instruct the container to use Java annotations or code as the metadata format by providing a small amount of XML configuration to declaratively enable support for these additional metadata formats.</p>
+<p>Spring提供了几个<code>ApplicationContext</code>接口的实现。在独立的应用程序中，通常会创建 <a href="https://docs.spring.io/spring-framework/docs/5.1.9.RELEASE/javadoc-api/org/springframework/context/support/ClassPathXmlApplicationContext.html" target="_blank" rel="noopener"><code>ClassPathXmlApplicationContext</code></a> or <a href="https://docs.spring.io/spring-framework/docs/5.1.9.RELEASE/javadoc-api/org/springframework/context/support/FileSystemXmlApplicationContext.html" target="_blank" rel="noopener"><code>FileSystemXmlApplicationContext</code></a> 的实例. 虽然XML是定义配置元数据的传统格式，但您可以通过提供少量XML配置来声明容器使用Java注释或代码作为元数据格式，以声明方式启用对这些其他元数据格式的支持。</p>
 <p>In most application scenarios, explicit user code is not required to instantiate one or more instances of a Spring IoC container. For example, in a web application scenario, a simple eight (or so) lines of boilerplate web descriptor XML in the <code>web.xml</code> file of the application typically suffices (see <a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#context-create" target="_blank" rel="noopener">Convenient ApplicationContext Instantiation for Web Applications</a>). If you use the <a href="https://spring.io/tools/sts" target="_blank" rel="noopener">Spring Tool Suite</a> (an Eclipse-powered development environment), you can easily create this boilerplate configuration with a few mouse clicks or keystrokes.</p>
+<p>在大多数应用场景下，实例化Spring IoC容器的一个或多个实例不需要显示用户代码。例如web应用场景中，应用程序的<code>web.xml</code>文件中的简单的八行（左右）样板Web描述符XML通常就足够了。如果您使用 <a href="https://spring.io/tools/sts" target="_blank" rel="noopener">Spring Tool Suite</a>（基于Eclipse的开发环境），只需点击几下鼠标或按键即可轻松创建此样板配置。</p>
 <p>The following diagram shows a high-level view of how Spring works. Your application classes are combined with configuration metadata so that, after the <code>ApplicationContext</code> is created and initialized, you have a fully configured and executable system or application.</p>
+<p>下图显示了Spring如何工作的高级视图。 您的应用程序类与配置元数据相结合，以便在创建和初始化<code>ApplicationContext</code>之后，您拥有一个完全配置且可执行的系统或应用程序。</p>
+<p><img src="https://docs.spring.io/spring/docs/current/spring-framework-reference/images/container-magic.png" alt="container magic"></p>
+<p>Figure 1. The Spring IoC container</p>
+<h4 id="1-2-1-Configuration-Metadata"><a href="#1-2-1-Configuration-Metadata" class="headerlink" title="1.2.1. Configuration Metadata"></a>1.2.1. Configuration Metadata</h4><p>配置元数据</p>
+<p>As the preceding diagram shows, the Spring IoC container consumes a form of configuration metadata. This configuration metadata represents how you, as an application developer, tell the Spring container to instantiate, configure, and assemble the objects in your application.</p>
+<p>如上图所示，Spring IoC容器使用一种配置元数据。此配置元数据表示您作为应用程序开发人员如何告诉Spring容器在应用程序中实例化，配置和组装对象。</p>
+<p>Configuration metadata is traditionally supplied in a simple and intuitive XML format, which is what most of this chapter uses to convey key concepts and features of the Spring IoC container.</p>
+<p>传统上，配置元数据以简单直观的XML格式提供，本章的大部分内容用于传达Spring IoC容器的关键概念和功能。</p>
+<p>XML-based metadata is not the only allowed form of configuration metadata. The Spring IoC container itself is totally decoupled from the format in which this configuration metadata is actually written. These days, many developers choose <a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-java" target="_blank" rel="noopener">Java-based configuration</a> for their Spring applications.</p>
+<p>基于XML的元数据不是唯一允许的配置元数据形式。 Spring IoC容器本身完全与实际编写此配置元数据的格式分离。 目前，许多开发人员为其Spring应用程序选择 <a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-java" target="_blank" rel="noopener">Java-based configuration</a> 。</p>
 
       
     </div>
@@ -747,7 +762,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Core-Technologies"><span class="nav-number">1.</span> <span class="nav-text">Core Technologies</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-The-IoC-Container"><span class="nav-number">1.1.</span> <span class="nav-text">1. The IoC Container</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-Introduction-to-the-Spring-IoC-Container-and-Beans"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1. Introduction to the Spring IoC Container and Beans</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-Container-Overview"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2. Container Overview</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Core-Technologies"><span class="nav-number">1.</span> <span class="nav-text">Core Technologies</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-The-IoC-Container"><span class="nav-number">1.1.</span> <span class="nav-text">1. The IoC Container</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-Introduction-to-the-Spring-IoC-Container-and-Beans"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1. Introduction to the Spring IoC Container and Beans</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-Container-Overview"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2. Container Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-1-Configuration-Metadata"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">1.2.1. Configuration Metadata</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
