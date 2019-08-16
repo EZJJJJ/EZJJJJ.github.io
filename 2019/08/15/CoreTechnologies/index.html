@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="JWZ&#39;s blog">
 <meta property="og:description" content="Core Technologies核心技术 Version 5.1.9.RELEASE">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-16T03:15:40.108Z">
+<meta property="og:updated_time" content="2019-08-16T03:25:01.504Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CoreTechnologies">
 <meta name="twitter:description" content="Core Technologies核心技术 Version 5.1.9.RELEASE">
@@ -384,7 +384,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-16 11:15:40" itemprop="dateModified" datetime="2019-08-16T11:15:40+08:00">2019-08-16</time>
+                <time title="修改时间：2019-08-16 11:25:01" itemprop="dateModified" datetime="2019-08-16T11:25:01+08:00">2019-08-16</time>
               
             
           </span>
@@ -455,23 +455,17 @@
 <p>本章介绍了Spring Framework 如何实现IoC的原理，IoC也被称为依赖注入。这是一个过程，通过这个过程，对象只能通过构造函数参数，工厂方法的参数或在构造工厂方法返回后在对象实例上设置的属性来定义它们的依赖关系（即，它们使用的其他对象）。然后容器在创建bean时注入这些依赖项。此过程基本上是bean本身的逆（因此名称，控制反转），通过使用类的直接构造或诸如服务定位器模式的机制来控制其依赖关系的实例化或位置。</p>
 <p>The <code>org.springframework.beans</code> and <code>org.springframework.context</code> packages are the basis for Spring Framework’s IoC container. The <a href="https://docs.spring.io/spring-framework/docs/5.1.9.RELEASE/javadoc-api/org/springframework/beans/factory/BeanFactory.html" target="_blank" rel="noopener"><code>BeanFactory</code></a> interface provides an advanced configuration mechanism capable of managing any type of object.<a href="https://docs.spring.io/spring-framework/docs/5.1.9.RELEASE/javadoc-api/org/springframework/context/ApplicationContext.html" target="_blank" rel="noopener"><code>ApplicationContext</code></a> is a sub-interface of <code>BeanFactory</code>. It adds:</p>
 <ul>
-<li><p>Easier integration with Spring’s AOP features</p>
-</li>
-<li><p>Message resource handling (for use in internationalization)</p>
-</li>
-<li><p>Event publication</p>
-</li>
-<li><p>Application-layer specific contexts such as the <code>WebApplicationContext</code> for use in web applications.</p>
-<p><code>org.springframework.beans</code> 和  <code>org.springframework.context</code> 包是Spring Framework的基础容器。 <a href="https://docs.spring.io/spring-framework/docs/5.1.9.RELEASE/javadoc-api/org/springframework/beans/factory/BeanFactory.html" target="_blank" rel="noopener"><code>BeanFactory</code></a> 接口提供一种能够管理任何类型对象的高级配置机制。<a href="https://docs.spring.io/spring-framework/docs/5.1.9.RELEASE/javadoc-api/org/springframework/context/ApplicationContext.html" target="_blank" rel="noopener"><code>ApplicationContext</code></a> 是<code>BeanFactory</code>的子接口。它补充了：</p>
-</li>
-<li><p>与Spring的AOP功能继承更便捷。</p>
-</li>
-<li><p>消息资源处理（用于国际化）</p>
-</li>
-<li><p>活动出版</p>
-</li>
-<li><p>特定于应用程序层的上下文，例如用于Web应用程序的“WebApplicationContext”。</p>
-</li>
+<li>Easier integration with Spring’s AOP features</li>
+<li>Message resource handling (for use in internationalization)</li>
+<li>Event publication</li>
+<li>Application-layer specific contexts such as the <code>WebApplicationContext</code> for use in web applications.</li>
+</ul>
+<p>The <code>org.springframework.beans</code> 和  <code>org.springframework.context</code> 包是Spring Framework的基础容器。 <a href="https://docs.spring.io/spring-framework/docs/5.1.9.RELEASE/javadoc-api/org/springframework/beans/factory/BeanFactory.html" target="_blank" rel="noopener"><code>BeanFactory</code></a> 接口提供一种能够管理任何类型对象的高级配置机制。<a href="https://docs.spring.io/spring-framework/docs/5.1.9.RELEASE/javadoc-api/org/springframework/context/ApplicationContext.html" target="_blank" rel="noopener"><code>ApplicationContext</code></a> 是<code>BeanFactory</code>的子接口。它补充了：</p>
+<ul>
+<li>与Spring的AOP功能继承更便捷。</li>
+<li>消息资源处理（用于国际化）</li>
+<li>活动出版</li>
+<li>特定于应用程序层的上下文，例如用于Web应用程序的“WebApplicationContext”。</li>
 </ul>
 <p>In short, the <code>BeanFactory</code> provides the configuration framework and basic functionality, and the <code>ApplicationContext</code> adds more enterprise-specific functionality. The <code>ApplicationContext</code> is a complete superset of the <code>BeanFactory</code> and is used exclusively in this chapter in descriptions of Spring’s IoC container. For more information on using the <code>BeanFactory</code> instead of the <code>ApplicationContext,</code> see <a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-beanfactory" target="_blank" rel="noopener">The <code>BeanFactory</code></a>.</p>
 <p>简而言之， <code>BeanFactory</code> 提供配置框架和基本功能 ，<code>ApplicationContext</code> 加入了许多特定于企业的功能。<br><code>ApplicationContext</code>是<code>BeanFactory</code>的完整超集，在本章中仅用于描述Spring的IoC容器。有关使用<code>BeanFactory</code>而不是<code>ApplicationContext</code>的更多信息，请参阅 <a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-beanfactory" target="_blank" rel="noopener"> TheBeanFactory</a>.</p>
