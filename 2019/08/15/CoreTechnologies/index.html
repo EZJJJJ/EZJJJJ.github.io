@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="JWZ&#39;s blog">
 <meta property="og:description" content="Core Technologies核心技术 Version 5.1.9.RELEASE">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-15T10:12:36.143Z">
+<meta property="og:updated_time" content="2019-08-16T03:15:40.108Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CoreTechnologies">
 <meta name="twitter:description" content="Core Technologies核心技术 Version 5.1.9.RELEASE">
@@ -367,12 +367,24 @@
                 
               
 
-              <time title="创建时间：2019-08-15 18:10:04 / 修改时间：18:12:36" itemprop="dateCreated datePublished" datetime="2019-08-15T18:10:04+08:00">2019-08-15</time>
+              <time title="创建时间：2019-08-15 18:10:04" itemprop="dateCreated datePublished" datetime="2019-08-15T18:10:04+08:00">2019-08-15</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-16 11:15:40" itemprop="dateModified" datetime="2019-08-16T11:15:40+08:00">2019-08-16</time>
               
             
           </span>
@@ -429,6 +441,47 @@
 <a id="more"></a>
 
 <hr>
+<p><strong>This part of the reference documentation covers all the technologies that are absolutely integral to the Spring Framework.</strong></p>
+<p><strong>这部分文档覆盖了Spring Framework中绝对不可或缺的所有技术。</strong></p>
+<p>Foremost amongst these is the Spring Framework’s Inversion of Control (IoC) container. A thorough treatment of the Spring Framework’s IoC container is closely followed by comprehensive coverage of Spring’s Aspect-Oriented Programming (AOP) technologies. The Spring Framework has its own AOP framework, which is conceptually easy to understand and which successfully addresses the 80% sweet spot of AOP requirements in Java enterprise programming.</p>
+<p>Spring Framework中最重要的部分是控制反转（IoC）容器。紧接着Spring Framework的IoC容器的全面处理，全面覆盖了Spring的（AOP）技术。Spring Framework有自己的AOP框架，它在概念上易于理解，并且成功地解决了Java企业编程中AOP要求的80％。</p>
+<p>Coverage of Spring’s integration with AspectJ (currently the richest — in terms of features — and certainly most mature AOP implementation in the Java enterprise space) is also provided.</p>
+<p>还提供了Spring与AspectJ的集成（目前最丰富的 - 在功能方面 - 当然也是Java企业领域中最成熟的AOP实现）。</p>
+<h2 id="1-The-IoC-Container"><a href="#1-The-IoC-Container" class="headerlink" title="1. The IoC Container"></a>1. The IoC Container</h2><p>IoC容器</p>
+<p>This chapter covers Spring’s Inversion of Control (IoC) container.</p>
+<p>本章介绍Spring的IoC容器。</p>
+<h3 id="1-1-Introduction-to-the-Spring-IoC-Container-and-Beans"><a href="#1-1-Introduction-to-the-Spring-IoC-Container-and-Beans" class="headerlink" title="1.1. Introduction to the Spring IoC Container and Beans"></a>1.1. Introduction to the Spring IoC Container and Beans</h3><p>IoC容器和Bean简介</p>
+<p>This chapter covers the Spring Framework implementation of the Inversion of Control (IoC) principle. IoC is also known as dependency injection (DI). It is a process whereby objects define their dependencies (that is, the other objects they work with) only through constructor arguments, arguments to a factory method, or properties that are set on the object instance after it is constructed or returned from a factory method. The container then injects those dependencies when it creates the bean. This process is fundamentally the inverse (hence the name, Inversion of Control) of the bean itself controlling the instantiation or location of its dependencies by using direct construction of classes or a mechanism such as the Service Locator pattern.</p>
+<p>本章介绍了Spring Framework 如何实现IoC的原理，IoC也被称为依赖注入。这是一个过程，通过这个过程，对象只能通过构造函数参数，工厂方法的参数或在构造工厂方法返回后在对象实例上设置的属性来定义它们的依赖关系（即，它们使用的其他对象）。然后容器在创建bean时注入这些依赖项。此过程基本上是bean本身的逆（因此名称，控制反转），通过使用类的直接构造或诸如服务定位器模式的机制来控制其依赖关系的实例化或位置。</p>
+<p>The <code>org.springframework.beans</code> and <code>org.springframework.context</code> packages are the basis for Spring Framework’s IoC container. The <a href="https://docs.spring.io/spring-framework/docs/5.1.9.RELEASE/javadoc-api/org/springframework/beans/factory/BeanFactory.html" target="_blank" rel="noopener"><code>BeanFactory</code></a> interface provides an advanced configuration mechanism capable of managing any type of object.<a href="https://docs.spring.io/spring-framework/docs/5.1.9.RELEASE/javadoc-api/org/springframework/context/ApplicationContext.html" target="_blank" rel="noopener"><code>ApplicationContext</code></a> is a sub-interface of <code>BeanFactory</code>. It adds:</p>
+<ul>
+<li><p>Easier integration with Spring’s AOP features</p>
+</li>
+<li><p>Message resource handling (for use in internationalization)</p>
+</li>
+<li><p>Event publication</p>
+</li>
+<li><p>Application-layer specific contexts such as the <code>WebApplicationContext</code> for use in web applications.</p>
+<p><code>org.springframework.beans</code> 和  <code>org.springframework.context</code> 包是Spring Framework的基础容器。 <a href="https://docs.spring.io/spring-framework/docs/5.1.9.RELEASE/javadoc-api/org/springframework/beans/factory/BeanFactory.html" target="_blank" rel="noopener"><code>BeanFactory</code></a> 接口提供一种能够管理任何类型对象的高级配置机制。<a href="https://docs.spring.io/spring-framework/docs/5.1.9.RELEASE/javadoc-api/org/springframework/context/ApplicationContext.html" target="_blank" rel="noopener"><code>ApplicationContext</code></a> 是<code>BeanFactory</code>的子接口。它补充了：</p>
+</li>
+<li><p>与Spring的AOP功能继承更便捷。</p>
+</li>
+<li><p>消息资源处理（用于国际化）</p>
+</li>
+<li><p>活动出版</p>
+</li>
+<li><p>特定于应用程序层的上下文，例如用于Web应用程序的“WebApplicationContext”。</p>
+</li>
+</ul>
+<p>In short, the <code>BeanFactory</code> provides the configuration framework and basic functionality, and the <code>ApplicationContext</code> adds more enterprise-specific functionality. The <code>ApplicationContext</code> is a complete superset of the <code>BeanFactory</code> and is used exclusively in this chapter in descriptions of Spring’s IoC container. For more information on using the <code>BeanFactory</code> instead of the <code>ApplicationContext,</code> see <a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-beanfactory" target="_blank" rel="noopener">The <code>BeanFactory</code></a>.</p>
+<p>简而言之， <code>BeanFactory</code> 提供配置框架和基本功能 ，<code>ApplicationContext</code> 加入了许多特定于企业的功能。<br><code>ApplicationContext</code>是<code>BeanFactory</code>的完整超集，在本章中仅用于描述Spring的IoC容器。有关使用<code>BeanFactory</code>而不是<code>ApplicationContext</code>的更多信息，请参阅 <a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-beanfactory" target="_blank" rel="noopener"> TheBeanFactory</a>.</p>
+<p>In Spring, the objects that form the backbone of your application and that are managed by the Spring IoC container are called beans. A bean is an object that is instantiated, assembled, and otherwise managed by a Spring IoC container. Otherwise, a bean is simply one of many objects in your application. Beans, and the dependencies among them, are reflected in the configuration metadata used by a container.</p>
+<p>在Spring中，构成应用程序主干并由Spring IoC容器管理的对象称为bean。bean是一个由Spring IoC容器实例化，组装和管理的对象。除此之外，bean只是应用程序中众多对象中的一个。Bean及其之间的依赖关系反映在容器使用的配置数据中。</p>
+<h3 id="1-2-Container-Overview"><a href="#1-2-Container-Overview" class="headerlink" title="1.2. Container Overview"></a>1.2. Container Overview</h3><p>容器概览</p>
+<p>The <code>org.springframework.context.ApplicationContext</code> interface represents the Spring IoC container and is responsible for instantiating, configuring, and assembling the beans. The container gets its instructions on what objects to instantiate, configure, and assemble by reading configuration metadata. The configuration metadata is represented in XML, Java annotations, or Java code. It lets you express the objects that compose your application and the rich interdependencies between those objects.</p>
+<p>Several implementations of the <code>ApplicationContext</code> interface are supplied with Spring. In stand-alone applications, it is common to create an instance of <a href="https://docs.spring.io/spring-framework/docs/5.1.9.RELEASE/javadoc-api/org/springframework/context/support/ClassPathXmlApplicationContext.html" target="_blank" rel="noopener"><code>ClassPathXmlApplicationContext</code></a> or <a href="https://docs.spring.io/spring-framework/docs/5.1.9.RELEASE/javadoc-api/org/springframework/context/support/FileSystemXmlApplicationContext.html" target="_blank" rel="noopener"><code>FileSystemXmlApplicationContext</code></a>. While XML has been the traditional format for defining configuration metadata, you can instruct the container to use Java annotations or code as the metadata format by providing a small amount of XML configuration to declaratively enable support for these additional metadata formats.</p>
+<p>In most application scenarios, explicit user code is not required to instantiate one or more instances of a Spring IoC container. For example, in a web application scenario, a simple eight (or so) lines of boilerplate web descriptor XML in the <code>web.xml</code> file of the application typically suffices (see <a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#context-create" target="_blank" rel="noopener">Convenient ApplicationContext Instantiation for Web Applications</a>). If you use the <a href="https://spring.io/tools/sts" target="_blank" rel="noopener">Spring Tool Suite</a> (an Eclipse-powered development environment), you can easily create this boilerplate configuration with a few mouse clicks or keystrokes.</p>
+<p>The following diagram shows a high-level view of how Spring works. Your application classes are combined with configuration metadata so that, after the <code>ApplicationContext</code> is created and initialized, you have a fully configured and executable system or application.</p>
 
       
     </div>
@@ -700,7 +753,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Core-Technologies"><span class="nav-number">1.</span> <span class="nav-text">Core Technologies</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Core-Technologies"><span class="nav-number">1.</span> <span class="nav-text">Core Technologies</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-The-IoC-Container"><span class="nav-number">1.1.</span> <span class="nav-text">1. The IoC Container</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-Introduction-to-the-Spring-IoC-Container-and-Beans"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1. Introduction to the Spring IoC Container and Beans</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-Container-Overview"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2. Container Overview</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
